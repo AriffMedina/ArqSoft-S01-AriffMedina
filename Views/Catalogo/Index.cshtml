@@ -1,0 +1,28 @@
+﻿@model List<Catalogo.Models.Item>
+
+<h1> Mi Catálogo</h1>
+
+<div>
+    <a asp-action="Index">Todos</a>
+    @foreach (var gen in ViewBag.Categoria as List<string>)
+    {
+        <span> | </span>
+        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
+
+    }
+</div>
+
+<hr />
+
+<ul>
+@foreach (var item in Model)
+{
+        <li>
+            <a asp-action="Detalle" asp-route-id="@item.Id">@item.Nombre</a>
+            -- @item.Categoria (@item.Precio)
+        </li>
+}
+</ul>
+
+<hr />
+<a asp-action="Agregar">+ Agregar Mollete</a>

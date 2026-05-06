@@ -1,0 +1,31 @@
+﻿@model Catalogo.Models.Item
+
+<h1>Agregar videojuego</h1>
+
+<form asp-action="Agregar" method="post">
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+    </div>
+    <div>
+        <label>Categoría</label>
+        <input asp-for="Categoria" />
+    </div>
+    <div>
+        <label>Descripción</label>
+        <input asp-for="Descripcion" />
+    </div>
+    <div>
+        <label>Precio</label>
+        <input asp-for="Precio" type="number" />
+    </div>
+    <div>
+        <label>Ingredientes</label>
+        <textarea asp-for="Ingredientes"></textarea>
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+<hr />
+<a asp-action="Index">&larr; Cancelar</a>
+
