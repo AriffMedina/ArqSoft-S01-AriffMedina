@@ -1,0 +1,157 @@
+﻿/* =============================================
+   CATÁLOGO — catalogo.css
+   ============================================= */
+
+:root {
+    --cream: #F7F1E8;
+    --cream-dark: #EDE4D4;
+    --amber: #C8720A;
+    --amber-light: #E8960F;
+    --brown: #3B2010;
+    --brown-mid: #6B3C18;
+    --white: #FFFDF9;
+    --muted: #7A5C40;
+}
+
+/* LAYOUT */
+.contenedor-catalogo {
+    padding: 3rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+    /* HEADING */
+    .contenedor-catalogo h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--brown);
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--amber-light);
+    }
+
+    /* DIVIDER */
+    .contenedor-catalogo hr {
+        border: none;
+        height: 1px;
+        background-color: var(--cream-dark);
+        margin: 1.5rem 0;
+    }
+
+/* FILTER PILLS */
+.filtros-categoria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2rem;
+}
+
+    /* Hide the Razor-generated "|" separators */
+    .filtros-categoria span {
+        display: none;
+    }
+
+    .filtros-categoria a {
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--brown-mid);
+        background-color: var(--cream);
+        border: 1px solid var(--cream-dark);
+        padding: 5px 14px;
+        border-radius: 100px;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+        .filtros-categoria a:hover,
+        .filtros-categoria a.activo {
+            background-color: var(--amber);
+            border-color: var(--amber);
+            color: var(--white);
+        }
+
+/* ADD BUTTON */
+.btn-agregar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--brown);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 22px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+    .btn-agregar:hover {
+        background-color: var(--brown-mid);
+        color: var(--white);
+    }
+
+/* CARD GRID */
+.lista-molletes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+    /* CARD */
+    .lista-molletes li {
+        background-color: var(--white);
+        border: 1px solid var(--cream-dark);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .lista-molletes li:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+        }
+
+/* CARD — title link */
+.titulo-mollete {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--brown);
+    text-decoration: none;
+    margin-bottom: 6px;
+    transition: color 0.2s;
+}
+
+    .titulo-mollete:hover {
+        color: var(--amber);
+    }
+
+/* CARD — "-- Categoría (Precio)" text */
+.info-mollete {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contenedor-catalogo {
+        padding: 2rem 1.5rem;
+    }
+
+        .contenedor-catalogo h1 {
+            font-size: 2rem;
+        }
+
+    .lista-molletes {
+        grid-template-columns: 1fr;
+    }
+}

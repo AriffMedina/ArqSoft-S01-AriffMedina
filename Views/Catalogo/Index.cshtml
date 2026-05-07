@@ -1,28 +1,34 @@
 ﻿@model List<Catalogo.Models.Item>
 
-<h1> Mi Catálogo</h1>
+    <head>
+        <link href="~/css/catalogo.css" rel="stylesheet" />
+    </head>
 
-<div>
-    <a asp-action="Index">Todos</a>
-    @foreach (var gen in ViewBag.Categoria as List<string>)
-    {
-        <span> | </span>
-        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
-
-    }
+<div class="contenedor-catalogo">
+    <h1>Mi Catálogo</h1>
+    
+    <div class="filtros-categoria">
+        <a asp-action="Index">Todos</a>
+        @foreach (var gen in ViewBag.Categorias as List<string>)
+        {
+            <span> | </span>
+            <a asp-action="Index" asp-route-genero="@gen">@gen</a>
+        }
+    </div>
+    
+    <hr />
+    
+    <ul class="lista-molletes">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a asp-action="Detalle" asp-route-id="@item.Id" class="titulo-mollete">@item.Nombre</a>
+                <span class="info-mollete">-- @item.Categoria (@item.Precio)</span>
+            </li>
+        }
+    </ul>
+    
+    <hr />
+    
+    <a asp-action="Agregar" class="btn-agregar">+ Agregar Mollete</a>
 </div>
-
-<hr />
-
-<ul>
-@foreach (var item in Model)
-{
-        <li>
-            <a asp-action="Detalle" asp-route-id="@item.Id">@item.Nombre</a>
-            -- @item.Categoria (@item.Precio)
-        </li>
-}
-</ul>
-
-<hr />
-<a asp-action="Agregar">+ Agregar Mollete</a>

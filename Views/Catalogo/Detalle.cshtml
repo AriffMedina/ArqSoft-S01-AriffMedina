@@ -1,11 +1,22 @@
 ﻿@model Catalogo.Models.Item
 
-<h1>@Model.Nombre</h1>
+<head>
+    <link href="~/css/Detalles.css" rel="stylesheet" />
+</head>
 
-<p><strong>Categoría :</strong> @Model.Categoria</p>
-<p><strong>Descripcion :</strong> @Model.Descripcion</p>
-<p><strong>Precio:</strong> @Model.Precio</p>
-<p><strong>Ingredientes :</strong> @Model.Ingredientes</p>
+<div class="contenedor-detalle">
+    <div class="tarjeta-detalle">
+        <h1>@Model.Nombre</h1>
 
-<hr />
-<a asp-action="Index">&larr; Volver al Catálogo</a>
+        <div class="seccion-texto">
+            <p><strong>Categoría :</strong> @Model.Categoria</p>
+            <p><strong>Descripcion :</strong> @Model.Descripcion</p>
+            <p><strong>Precio:</strong> <span class="precio-valor">@Model.Precio</span></p>
+            <p><strong>Ingredientes :</strong> @Model.Ingredientes</p>
+        </div>
+
+        <hr />
+
+        <a asp-action="Index" class="btn-volver">&larr; Volver al Catálogo</a>
+    </div>
+</div>
