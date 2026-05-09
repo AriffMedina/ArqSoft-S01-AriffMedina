@@ -1,43 +1,138 @@
 ﻿/* =============================================
    CATÁLOGO — catalogo.css
+   Estilo consistente con site.css + agenda.css
    ============================================= */
 
-:root {
-    --cream: #F7F1E8;
-    --cream-dark: #EDE4D4;
-    --amber: #C8720A;
-    --amber-light: #E8960F;
-    --brown: #3B2010;
-    --brown-mid: #6B3C18;
-    --white: #FFFDF9;
-    --muted: #7A5C40;
+/* Variables heredadas de site.css:
+   --cream, --cream-dark, --amber, --amber-light,
+   --brown, --brown-mid, --white, --text, --muted  */
+
+/* ── Hero del catálogo ── */
+.catalogo-hero {
+    background-color: var(--brown);
+    padding: 4.5rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* LAYOUT */
+    /* Patrón diagonal igual que about-visual y agenda-hero */
+    .catalogo-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient( 45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 20px );
+    }
+
+    /* Franja ámbar al fondo */
+    .catalogo-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--amber), var(--amber-light), var(--amber));
+    }
+
+.catalogo-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    animation: fadeUp 0.6s ease both;
+}
+
+/* Badge — igual que hero-badge del site */
+.catalogo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+}
+
+    .catalogo-badge span {
+        width: 6px;
+        height: 6px;
+        background: var(--amber-light);
+        border-radius: 50%;
+        display: inline-block;
+        animation: pulse 2s infinite;
+    }
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.75);
+    }
+}
+
+.catalogo-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+}
+
+    .catalogo-hero h1 em {
+        color: var(--amber-light);
+        font-style: italic;
+    }
+
+.catalogo-hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.45);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* ── Contenedor principal ── */
 .contenedor-catalogo {
-    padding: 3rem 5rem;
+    padding: 3.5rem 5rem 5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-    /* HEADING */
-    .contenedor-catalogo h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--brown);
-        display: inline-block;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 3px solid var(--amber-light);
-    }
+/* ── Barra de filtros + botón ── */
+.catalogo-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--cream-dark);
+    position: relative;
+}
 
-    /* DIVIDER */
-    .contenedor-catalogo hr {
-        border: none;
-        height: 1px;
-        background-color: var(--cream-dark);
-        margin: 1.5rem 0;
+    /* Línea ámbar centrada bajo la toolbar — igual que privacy */
+    .catalogo-toolbar::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--amber);
+        border-radius: 2px;
     }
 
 /* FILTER PILLS */
@@ -46,18 +141,17 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: 2rem;
 }
 
-    /* Hide the Razor-generated "|" separators */
     .filtros-categoria span {
         display: none;
     }
 
     .filtros-categoria a {
         text-decoration: none;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 500;
+        letter-spacing: 0.06em;
         color: var(--brown-mid);
         background-color: var(--cream);
         border: 1px solid var(--cream-dark);
@@ -81,75 +175,145 @@
     background-color: var(--brown);
     color: var(--white);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    padding: 11px 22px;
+    letter-spacing: 0.04em;
+    padding: 10px 20px;
     border-radius: 4px;
-    margin-top: 1rem;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    white-space: nowrap;
 }
 
     .btn-agregar:hover {
         background-color: var(--brown-mid);
         color: var(--white);
+        transform: translateY(-1px);
     }
 
-/* CARD GRID */
+/* ── Grid de cards ── */
 .lista-molletes {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1px;
+    background: var(--cream-dark);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
     /* CARD */
     .lista-molletes li {
         background-color: var(--white);
-        border: 1px solid var(--cream-dark);
-        border-radius: 8px;
-        padding: 1.5rem;
-        transition: transform 0.2s, box-shadow 0.2s;
+        padding: 1.75rem 2rem;
+        position: relative;
+        transition: background 0.3s;
     }
 
-        .lista-molletes li:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+        /* Acento ámbar inferior al hover — igual que stat-item */
+        .lista-molletes li::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background: var(--amber);
+            transition: width 0.4s ease;
         }
 
-/* CARD — title link */
+        .lista-molletes li:hover {
+            background-color: var(--cream);
+        }
+
+            .lista-molletes li:hover::before {
+                width: 100%;
+            }
+
+/* Título del card */
 .titulo-mollete {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--brown);
     text-decoration: none;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     transition: color 0.2s;
+    line-height: 1.3;
 }
 
     .titulo-mollete:hover {
         color: var(--amber);
     }
 
-/* CARD — "-- Categoría (Precio)" text */
+/* Categoría + precio */
 .info-mollete {
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--muted);
-    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .contenedor-catalogo {
-        padding: 2rem 1.5rem;
+    /* Punto separador decorativo */
+    .info-mollete::before {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background: var(--amber-light);
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 
-        .contenedor-catalogo h1 {
-            font-size: 2rem;
-        }
+/* ── Estado vacío ── */
+.catalogo-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+}
+
+    .catalogo-empty p {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        color: var(--muted);
+        font-style: italic;
+    }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .catalogo-hero {
+        padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .contenedor-catalogo {
+        padding: 2rem 1.25rem 3rem;
+    }
+
+    .catalogo-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     .lista-molletes {
         grid-template-columns: 1fr;

@@ -1,45 +1,17 @@
 ﻿
-:root {
-    --font-mono: "GoMono Nerd Font", monospace;
-    --font-display: 'Bebas Neue', var(--font-mono), monospace;
-    --font-serif: 'Libre Baskerville', serif;
-    --rojo: #C8151B;
-    --rojo-oscuro: #8B0D10;
-    --rojo-light: #E8343A;
-    --crema: #FDF6EC;
-    --crema-dark: #F0E4CC;
-    --azul-talavera: #1A3A6B;
-    --blanco: #FFFEF9;
-    --texto: #1A0A0A;
-    --muted: #6B3535;
-    --dorado: #C8920A;
-    --dorado-light: #E8B230;
-    --borde: rgba(200, 21, 27, 0.15);
-}
-
-
-.container {
-    font-family: var(--font-mono);
-    color: var(--texto);
-    max-width: 860px;
-}
-
-
 .text-center h1.display-4 {
-    font-family: var(--font-display);
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: var(--rojo-oscuro);
-    text-shadow: 2px 2px 0 var(--crema-dark);
-    line-height: 1;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1.05;
     margin-bottom: 0.5rem;
 }
 
 .text-center p.text-muted {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--muted) !important;
     display: inline-flex;
@@ -47,21 +19,19 @@
     gap: 8px;
 }
 
-    
     .text-center p.text-muted::before {
         content: '';
         display: inline-block;
-        width: 7px;
-        height: 7px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
-        background: var(--rojo);
+        background: var(--amber);
         flex-shrink: 0;
     }
 
-
 .text-center.mb-5 {
     padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--borde);
+    border-bottom: 1px solid var(--cream-dark);
     position: relative;
 }
 
@@ -73,35 +43,32 @@
         transform: translateX(-50%);
         width: 60px;
         height: 3px;
-        background: var(--rojo);
+        background: var(--amber);
         border-radius: 2px;
     }
-
 
 .privacy-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    border: 2px solid var(--rojo-oscuro);
-    border-radius: 4px;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--cream-dark);
+    border-radius: 8px;
     overflow: hidden;
-    background: var(--rojo-oscuro);
 }
-
 
 .privacy-card {
-    background: var(--blanco);
+    background: var(--white);
     padding: 2.25rem 2.5rem;
     position: relative;
-    transition: background 0.25s;
+    transition: background 0.3s;
 }
 
-    
     .privacy-card + .privacy-card {
-        border-top: 2px solid var(--rojo-oscuro);
+        border-top: 1px solid var(--cream-dark);
     }
 
-    
+    /* Acento ámbar lateral al hover */
     .privacy-card::before {
         content: '';
         position: absolute;
@@ -109,53 +76,47 @@
         left: 0;
         width: 4px;
         height: 0;
-        background: var(--rojo);
-        transition: height 0.35s ease;
+        background: var(--amber);
+        transition: height 0.4s ease;
     }
 
     .privacy-card:hover {
-        background: var(--crema);
+        background: var(--cream);
     }
 
         .privacy-card:hover::before {
             height: 100%;
         }
 
-    
     .privacy-card h2 {
-        font-family: var(--font-display);
-        font-size: 1.55rem;
-        font-weight: 400;
-        letter-spacing: 0.04em;
-        color: var(--rojo-oscuro);
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--brown);
         margin-bottom: 1rem;
         display: flex;
         align-items: baseline;
         gap: 0.6rem;
     }
 
-        
         .privacy-card h2::after {
             content: '';
             display: block;
             flex: 1;
             height: 1px;
-            background: var(--borde);
+            background: var(--cream-dark);
             margin-left: 0.5rem;
             position: relative;
             top: -3px;
         }
 
-    
     .privacy-card p {
-        font-family: var(--font-mono);
-        font-size: 0.875rem;
-        line-height: 1.9;
+        font-size: 15px;
+        line-height: 1.85;
         color: var(--muted);
         margin-bottom: 0;
     }
 
-    
     .privacy-card ul {
         list-style: none;
         padding: 0;
@@ -166,29 +127,25 @@
     }
 
         .privacy-card ul li {
-            font-family: var(--font-mono);
-            font-size: 0.875rem;
+            font-size: 15px;
             line-height: 1.7;
             color: var(--muted);
             padding-left: 1.4rem;
             position: relative;
         }
 
-            
             .privacy-card ul li::before {
                 content: '▸';
                 position: absolute;
                 left: 0;
-                color: var(--rojo);
+                color: var(--amber);
                 font-size: 0.75rem;
-                top: 0.1em;
+                top: 0.15em;
             }
 
-    
     .privacy-card:focus-within {
         box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
     }
-
 
 @media (max-width: 768px) {
     .privacy-card {
@@ -196,6 +153,6 @@
     }
 
     .text-center h1.display-4 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }
