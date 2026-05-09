@@ -1,6 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<head>
+    <link href="~/css/privacy.css" rel="stylesheet" />
+</head>
+@{
+    ViewData["Title"] = "Política de Privacidad";
+}
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <p class="text-muted">Última actualización: Mayo 2026</p>
+    </div>
+
+    <div class="privacy-wrapper">
+        <section class="privacy-card">
+            <h2>1. Información que Recopilamos</h2>
+            <p>Recopilamos información necesaria para la gestión del catálogo de negocios y la mejora de la experiencia del usuario en la plataforma.</p>
+        </section>
+
+        <section class="privacy-card">
+            <h2>2. Uso de los Datos</h2>
+            <p>Los datos se utilizan exclusivamente para:</p>
+            <ul>
+                <li>Personalizar la navegación del usuario dentro del catálogo.</li>
+                <li>Mantener la seguridad y estabilidad de la aplicación.</li>
+                <li>Analizar el rendimiento técnico del sistema.</li>
+            </ul>
+        </section>
+
+        <section class="privacy-card">
+            <h2>3. Seguridad de la Información</h2>
+            <p>Implementamos medidas técnicas para proteger la integridad de los registros y evitar accesos no autorizados a la base de datos del proyecto.</p>
+        </section>
+    </div>
+</div>
