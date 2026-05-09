@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "Agenda tu Visita";
+}
+
+<head>
+    <link href="~/css/agenda.css" rel="stylesheet" />
+    
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<div class="agenda-hero">
+    <div class="agenda-hero-inner">
+        <div class="agenda-badge">
+            <span class="agenda-badge-dot"></span>
+            Festival del Mollete &middot; 2026
+        </div>
+        <h1 class="agenda-title">Agenda<br><em>tu visita</em></h1>
+        <p class="agenda-subtitle">Elige el día y horario que mejor te quede. Nosotros te esperamos con el mollete listo.</p>
+    </div>
+</div>
+
+<div class="container agenda-container">
+
+    
+    <div class="agenda-info-grid">
+        <div class="agenda-info-card">
+            <span class="agenda-info-icon">📍</span>
+            <div>
+                <div class="agenda-info-label">Ubicación</div>
+                <div class="agenda-info-value">Sanborns Altabrisa, Mérida</div>
+            </div>
+        </div>
+        <div class="agenda-info-card">
+            <span class="agenda-info-icon">🕙</span>
+            <div>
+                <div class="agenda-info-label">Horario</div>
+                <div class="agenda-info-value">Lun – Dom · 10:00 a 20:00</div>
+            </div>
+        </div>
+        <div class="agenda-info-card">
+            <span class="agenda-info-icon">🎟️</span>
+            <div>
+                <div class="agenda-info-label">Entrada</div>
+                <div class="agenda-info-value">Completamente gratuita</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="calendly-wrapper">
+        <div class="calendly-header">
+            <p class="calendly-header-label">Selecciona tu horario</p>
+            <p class="calendly-header-hint">
+                Recibirás una confirmación por correo con todos los detalles de tu visita.
+            </p>
+        </div>
+
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/ariffmedina-contact/30min"
+             style="min-width:320px;height:700px;">
+        </div>
+    </div>
+
+    <p class="agenda-note">
+        ¿Tienes dudas sobre tu reservación? Escríbenos a
+        <a href="mailto:contacto@festivaldelmollete.mx">contacto@festivaldelmollete.mx</a>
+    </p>
+
+</div>
