@@ -25,9 +25,9 @@ para cada
 
 | Home / Bienvenida | Catálogo de Molletes |
 | :---: | :---: |
-| ![Home](./screenshots/Index.png) | ![Catalogo](./screenshots/Catalogo.png) |
+| ![Home](./screenshots/Index.jpeg) | ![Catalogo](./screenshots/Catalogo.jpeg) |
 | **Agenda tu Visita** | **Política de Privacidad** |
-| ![Agenda](./screenshots/Agenda.png) | ![Privacidad](./screenshots/Privacidad.png) |
+| ![Agenda](./screenshots/Agenda.jpeg) | ![Privacidad](./screenshots/Privacidad.jpeg) |
 
 ---
 
