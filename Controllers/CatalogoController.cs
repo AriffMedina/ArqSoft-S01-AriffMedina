@@ -21,7 +21,7 @@ namespace Catalogo.Controllers
             new Item
             {
                 Id = 2,
-                Nombre = "Peperoni",
+                Nombre = "Pepperoni",
                 Ingredientes = "Pepperoni, queso, salsa de tomate",
                 Precio = 120,
                 Descripcion = "Mollete clásico con pepperoni, queso fundido y salsa de tomate",
@@ -31,11 +31,41 @@ namespace Catalogo.Controllers
             new Item
             {
                 Id = 3,
+                Nombre = "Hawaiana",
+                Ingredientes = "Piña, jamón, queso",
+                Precio = 165,
+                Descripcion = "Mollete clásico con piña, jamón y queso fundido",
+                Categoria = "Clasica"
+            },
+
+            new Item
+            {
+                Id = 4,
+                Nombre = "Mexicana",
+                Ingredientes = "Carne de res, jalapeños, queso, salsa",
+                Precio = 130,
+                Descripcion = "Mollete clásico cons carne de res, jalapeños, queso fundido y salsa",
+                Categoria = "Regional"
+            },
+
+            new Item
+            {
+                Id = 5,
                 Nombre = "Mollete tradicional",
                 Ingredientes = "Pan, frijoles, queso, salsa",
                 Precio = 100,
                 Descripcion = "Mollete tradicional mexicano con pan, frijoles, queso y salsa",
                 Categoria = "Clasica"
+            },
+
+            new Item
+            {
+                Id = 6,
+                Nombre = "Mollete yucateco",
+                Ingredientes = "Pan, frijoles, queso, poc chuc",
+                Precio = 120,
+                Descripcion = "Mollete clásico con poc chuc, queso fundido y salsa de tomate",
+                Categoria = "Regional"
             },
         };
 
